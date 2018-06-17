@@ -97,7 +97,8 @@ const stringModul = (function () {
 let str;
 return {
     setString:  function setString(value) {
-        str = typeof str === 'string' ? value : String(value);
+        if(typeof value !== 'string') return console.log("Value is not a string");
+        str = value;
         console.log(str);
     },
     getString: function getString() {
@@ -122,28 +123,23 @@ const calculator = (function () {
     let char;
     return{
         setValue: function setValue(value){
-            char = typeof char === 'number' ? value : Number(value);
-            console.log('value = ' + char + ' and is a ' + typeof char);
+            if( typeof value !== 'number' ) return  console.log("Value is not a number");
+            char = value;            
         },
         addition: function addition(value){
-            return char += value;
-            console.log(char);
+            return char += value;            
         },
         subtraction: function subtraction(value){
-            return char -= value;
-            console.log(char);
+            return char -= value;            
         },
         multiplication: function multiplication(value){
-            return char *= value;
-            console.log(char);
+            return char *= value;            
         },
         division: function division(value){
-            return char /= value;
-            console.log(char);
+            return char /= value;            
         },
         pow: function pow(value){
-            return char *= char;
-            console.log(char);
+            return char *= char;            
         },
         getValue: function getValue() {
             return 'char = ' + char.toFixed(2);
