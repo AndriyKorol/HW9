@@ -97,7 +97,7 @@ const stringModul = (function () {
 let str;
 return {
     setString:  function setString(value) {
-        if(typeof value !== 'string') return console.log("Value is not a string");
+        if(typeof value !== 'string') return console.log(`${value} is not a string`);
         str = value;
         console.log(str);
     },
@@ -123,7 +123,7 @@ const calculator = (function () {
     let char;
     return{
         setValue: function setValue(value){
-            if( typeof value !== 'number' ) return  console.log("Value is not a number");
+            if( typeof value !== 'number' ) return  console.log(`${value} is not a number`);
             char = value;            
         },
         addition: function addition(value){
